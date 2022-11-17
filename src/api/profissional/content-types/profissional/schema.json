@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profissionals",
+  "info": {
+    "singularName": "profissional",
+    "pluralName": "profissionals",
+    "displayName": "profissional",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "cns": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "vinculos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vinculo.vinculo",
+      "inversedBy": "profissionals"
+    }
+  }
+}

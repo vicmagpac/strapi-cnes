@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estabelecimentos",
+  "info": {
+    "singularName": "estabelecimento",
+    "pluralName": "estabelecimentos",
+    "displayName": "estabelecimento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "razaoSocial": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true,
+      "minLength": 3
+    },
+    "cnes": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
+      "type": "string",
+      "required": true
+    },
+    "vinculos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vinculo.vinculo",
+      "inversedBy": "estabelecimentos"
+    }
+  }
+}

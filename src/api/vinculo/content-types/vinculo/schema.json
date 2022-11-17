@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vinculos",
+  "info": {
+    "singularName": "vinculo",
+    "pluralName": "vinculos",
+    "displayName": "vinculo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cbo": {
+      "type": "string",
+      "required": true
+    },
+    "estabelecimentos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::estabelecimento.estabelecimento",
+      "inversedBy": "vinculos"
+    },
+    "profissionals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profissional.profissional",
+      "inversedBy": "vinculos"
+    }
+  }
+}
